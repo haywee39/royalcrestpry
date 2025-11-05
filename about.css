@@ -1,0 +1,631 @@
+html{
+  overflow-x: hidden;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: rgb(0, 100, 0);
+}
+p, a, b{
+  font-size: 20px;
+  text-decoration: none;
+}
+
+ p{
+    font-weight: normal;
+  }
+/* ************************************* */
+/* animated section */
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state (visible) */
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+   /* Loader Container */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color:rgb(0, 100, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 99999;
+    }
+
+    /* Logo */
+    #loader img {
+      width: 230px; /* adjust as needed */
+    }
+
+    /* Percentage text */
+    #percentage {
+      font-family: 'Merriweather', serif;
+      color: white;
+      font-size: 25px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #fff;
+      transition: width 0.05s linear;
+    }
+
+    /* Hide loader when done */
+    .fade-out {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    /* loader ends  */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ********************************************* */
+.tour-section {
+  padding: 65px 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 100, 0);
+}
+
+.tour-cover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 65%;
+  height: 100%;
+  gap: 1.5rem;
+
+}
+.tour-cover h4, .tour-cover p{
+  color: white;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+.tour-cover h4{
+  word-spacing: .5rem;
+  letter-spacing: .5rem;
+}
+/* ****************************************** */
+
+   /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+        .slides {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: auto;
+            gap: 50px;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(0, 100, 0);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .content-div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            overflow: hidden; /* Important for the slide effect */
+            min-height: 300px; /* Ensure there's enough height to see the animation */
+        }
+        .middle{
+          text-align: left !important;
+        }
+        .text-container{
+          text-align: right;
+          line-height: 5rem;
+          gap: 10px;
+          letter-spacing: 2px;
+          word-spacing: 5px;
+          font-style: italic;
+        }
+        .text-container h1{
+          color: white;
+          font-weight: bolder;
+          font-size: 4rem;
+        }
+        .text-container h5{
+          color: white;
+          /* font-weight: bold; */
+          /* font-size: 20px; */
+        }
+
+        /* Default layout: Image on left, Text on right (for .content-div:nth-child(even), and the default if no :nth-child applied) */
+        .content-div {
+            flex-direction: row; /* Default: img left, text right */
+        }
+
+        /* Layout for odd children: Text on left, Image on right */
+        .content-div:nth-child(odd) {
+            flex-direction: row-reverse; /* For first, third, etc.: img right, text left */
+        }
+
+        .image-container, .text-container {
+            flex: 1;
+            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+            opacity: 0; /* Initially hidden */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Initial positions for elements BEFORE they become visible */
+
+        /* Image for .content-div (default: left side, slides in from left) */
+        .content-div .image-container {
+            transform: translateX(-100%); /* Slides in from the left */
+        }
+        /* Text for .content-div (default: right side, slides in from right) */
+        .content-div .text-container {
+            transform: translateX(100%); /* Slides in from the right */
+        }
+
+        /* Adjust positions for .content-div:nth-child(odd) */
+        /* Image for .content-div:nth-child(odd) (right side, slides in from right) */
+        .content-div:nth-child(odd) .image-container {
+             transform: translateX(100%); /* Slides in from the right */
+        }
+        /* Text for .content-div:nth-child(odd) (left side, slides in from left) */
+        .content-div:nth-child(odd) .text-container {
+            transform: translateX(-100%); /* Slides in from the left */
+        }
+
+
+        /* When a content-div becomes visible */
+        .content-div.visible .image-container,
+        .content-div.visible .text-container {
+            transform: translateX(0); /* Move to original position */
+            opacity: 1; /* Fade in */
+        }
+
+/* **********************************************8 */
+/* CORE VALUE  */
+.core-val-section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    padding: 2rem 2rem;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(0, 100, 0, 0.3);
+
+}
+.heading{
+  color: rgb(0, 100, 0);
+}
+.core-val-cover {
+  color: rgb(0, 100, 0);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 per row */
+  gap: 3rem;font-weight: bold;
+  padding: 20px 0;
+  text-align: center;
+  justify-items: center;
+}
+.highlight-icon i{
+  color: rgb(0, 100, 0);
+}
+.divider {
+  width: 2px;
+  height: 4vh;
+  margin: 8px auto;
+  background-color: rgb(0, 100, 0);
+}
+/* ************************************************* */
+/* Student-pro Section */
+.student-pro {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.student-pro h2{
+  color: rgb(0, 100, 0);
+}
+.student-pro h5{
+  font-style: italic;
+  padding: 0 30px;
+}
+.student-item{
+    display: flex;
+    width: 85%;
+    height: 70vh;
+    margin: 3rem;
+    gap: 50px;
+    justify-content: space-around;
+    align-items: center;  
+}
+/* ****************************************************    */
+  .stack {
+    position: relative;
+    width: 35%;
+    height: 80%;
+    display: grid;
+    border-radius: 20%;
+    place-items: center;
+
+  }
+
+  /* Rhombus (diamond) */
+  .diamond {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: rgb(0, 100, 0, 0.3);
+    transform: rotate(45deg);
+    border-radius: 20%;
+    z-index: 0;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+
+  /* Square image on top */
+  .photo {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 20%;
+    z-index: 1;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  /* Bounce animation */
+  @keyframes bob {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50%      { transform: rotate(45deg) translateY(-10px); }
+  }
+
+  /* Reduced motion users */
+  @media (prefers-reduced-motion: reduce) {
+    .diamond { animation: none; }
+  }
+/* ****************************************************************** */
+.value{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    height: auto;
+    gap: 10px;
+    text-align: center;
+}
+.value h1{
+    color: rgb(0, 100, 0);
+    letter-spacing: 2px;
+}
+
+/* ********************************************* */
+ /* <!--START THE TEAM PROFILE BEGIN HERE--> */
+  #team{
+    padding-top: 2vh;
+    display: flex;
+    flex-direction:column;
+    width:100vw;
+    height: auto; 
+    align-items: center;
+  }
+  
+  .team-profile {
+    margin: 20px; /* Add space around each profile card */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background: rgb(0, 100, 0. 0.3);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  .team-profile.visible {
+    animation: slideIn 1s ease forwards;
+  }
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  
+  .team-profile img {
+    width: 100%;
+    height: 75%;
+  }
+  
+  .team-details {
+    width: 100%;
+    height: 95px;
+    color: white;
+    background-color: rgb(0, 100, 0);
+  }
+  
+  .team-details h1 {
+    letter-spacing: 1px;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+  }
+  
+  .team-profile p {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+  }
+  
+  /* <!--END THE TEAMS PROFILE END HERE   --> */
+/* *************************************************** */
+
+/* CTA Footer */
+.cta-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 20px;
+    background-color:rgb(0, 100, 0);
+    color: white;
+}
+
+.cta-footer h3 {
+    color: var(--background-white);
+    margin-bottom: 1.5rem;
+}
+.cta-button {
+    display: inline-block;
+    background:  rgb(0, 100, 0);
+    color: white;
+    letter-spacing: 2px;
+    padding: 1.2rem 5rem;
+    border-radius: 3px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.cta-button:hover {
+    background-color: rgb(0, 100, 0);
+    transform: translateY(-5px);
+    border: none;
+}
+
+.cta-footer .cta-button {
+    background-color: white;
+    color: rgb(0, 100, 0);
+}
+.hori{
+  display: none;
+  visibility: hidden;
+}
+.contact-address{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+  height: 45vh;
+  padding: 0;
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    
+  max-width: 200px;
+  color: white; 
+  gap: 5px; 
+}
+.quick-link a{
+  text-decoration: none;
+  color: white;
+}
+
+.address {
+  align-items: center;
+  text-align: left;    
+  max-width: 300px;
+  color: white; 
+}
+.address p{
+  color: white;
+}
+.quick-link h4, .address h4, .map h4{
+  color: white;
+}
+
+ .map {
+   max-width: 300px; 
+}
+.more-text p{
+  color: white;
+}
+
+
+
+
+
+
+/* ****************************************************** */
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .logo{
+    display: none;
+    visibility: hidden;
+  }
+  *********************** */
+    .tour-section{
+      width: 100%;
+      height: 100%;
+      padding: 15px 3px;
+  
+    }
+    .tour-cover{
+      width: 100%;
+      height: auto;
+      gap: .3rem;
+    }
+    .tour-section h4{
+       text-align: center;
+    }
+    .tour-cover p{
+      word-spacing: 0;
+      letter-spacing: 0;
+    }
+    .line{
+      height: 3vh;
+    }
+    /* ************************* */
+.core-val-cover {
+  color: rgb(0, 100, 0);
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  
+}
+/* ********************* */
+  .stack {
+    width: 80vw;
+  }
+  .value{ 
+    align-items: center;
+    width: 100%;
+}
+.value h1, .value p{
+    color: rgb(0, 100, 0);
+    letter-spacing: 2px;
+}
+
+  /* &&&&&&&&&&&&&&&&&&&&&&& */
+  .texts{
+    padding: 20px;
+    width: 100%;
+  }
+   .texts img{
+    width: 100px;
+    height: 100px;
+    border-radius: 15%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+    .student-pro {
+    padding: 2rem 0;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+    .student-item{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  /* &&&&&&&&&&&&&&&&&&&&& */
+    .contact-address{
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+    }
+    .verti{
+      display: none;
+      visibility: hidden;
+    }
+    .hori{
+      display: flex;
+      visibility: visible;
+    }
+
+}
+  /* slide s for history 3 years  */
+  /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .content-div {
+                flex-direction: column !important; /* Stack vertically */
+                /* text-align: center; */
+            }
+
+            /* Reset initial slide directions for mobile to be consistent (e.g., always from top/bottom or just fade in) */
+            /* For simplicity, let's make both image and text slide up/down, or just fade in. */
+            /* Let's make them both slide in from the bottom on mobile */
+            .image-container, .text-container {
+                transform: translateY(50px); /* Start slightly below */
+            }
+
+            .content-div.visible .image-container,
+            .content-div.visible .text-container {
+                transform: translateY(0);
+            }
+        }
+

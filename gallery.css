@@ -1,0 +1,312 @@
+html{
+  overflow-x: hidden;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: rgb(0, 100, 0);;
+}
+p, a, b{
+  font-size: 20px;
+  text-decoration: none;
+}
+
+ p, a{
+    font-weight: normal;
+  }
+
+/* ************************** */
+  /* animated section */
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Final state (visible) */
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+  
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color:rgb(0, 100, 0, 0.6);
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.gallery-item {
+    flex-basis: 32.7%;
+    margin-bottom: 6px;
+    opacity: .85;
+    cursor: pointer;
+}
+.gallery-item:hover {
+    opacity: 1;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery-content {
+    font-size: .8em;
+}
+
+.lightbox {
+    position: fixed;
+    display: none;
+    background-color: rgb(0, 100, 0, 0.8);
+    width: 100%;
+    height: 100%;              
+    overflow: auto;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.lightbox-content {
+    position: relative;
+    width: 65%;
+    height: 85%;
+    margin: 5% auto;
+}
+.lightbox-content img {
+    border-radius: 7px;
+    box-shadow: 0 0 3px 0 rgba(225, 225, 225, .25);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background-color: rgb(0, 100, 0);
+    color: #fff;
+    padding: 7px;
+    top: 45%;
+    cursor: pointer;
+}
+.lightbox-prev {
+    left: 0;
+}
+.lightbox-next {
+    right: 0;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    opacity: .8;
+}
+
+/* GALLERY VIDEO ITEM  */
+/* Position video play button in center */
+.video-item {
+  position: relative;
+}
+
+.video-item .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
+  background: rgb(0, 100, 0, 0.6);
+  border-radius: 50%;
+  padding: 0.5rem 0.8rem;
+  pointer-events: none; /* allows click to pass through to parent */
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/& */
+.tour-section {
+  padding: 65px 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 100, 0, 0.6);
+}
+
+.tour-cover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 100%;
+  gap: 1.5rem;
+
+}
+.tour-cover h2{
+  color: white;
+}
+.tour-cover h2{
+  word-spacing: .5rem;
+}
+.tour-cover h5{
+  color: white;
+  font-size: 20px;
+  word-spacing: .8rem;
+  letter-spacing: .3rem;
+}
+/* ************************************* */
+
+/* CTA Footer */
+.cta-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 20px;
+    background-color:rgb(0, 100, 0);
+    color: white;
+}
+
+.cta-footer h3 {
+    color: var(--background-white);
+    margin-bottom: 1.5rem;
+}
+
+.cta-footer .cta-button {
+    background-color: white;
+    color: rgb(0, 100, 0);
+}
+.cta-button {
+    display: inline-block;
+    background:  rgb(0, 100, 0);
+    color: white;
+    letter-spacing: 2px;
+    padding: 1.2rem 5rem;
+    border-radius: 3px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    border: none;
+}
+.hori{
+  display: none;
+  visibility: hidden;
+}
+.contact-address{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+  height: 45vh;
+  padding: 0;
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    
+  max-width: 200px;
+  color: white; 
+  gap: 5px; 
+}
+.quick-link a{
+  text-decoration: none;
+  color: white;
+}
+
+.address {
+  align-items: center;
+  text-align: left;    
+  max-width: 300px;
+  color: white; 
+}
+.address p{
+  color: white;
+}
+.quick-link h4, .address h4, .map h4{
+  color: white;
+}
+
+ .map {
+   max-width: 300px; 
+}
+.more-text p{
+  color: white;
+}
+/* ****************************************************** */
+/* Responsive Design */
+@media (max-width: 768px) {
+      /* ************************ */
+    .tour-section{
+      width: 100%;
+      height: 100%;
+      padding: 15px 5px;
+  
+    }
+    .tour-cover{
+      width: 90%;
+      height: auto;
+      gap: .5rem;
+    }
+    .tour-section h2{
+       text-align: center;
+       padding: 0 5px;
+    }
+    .tour-cover h5{
+      font-size: 20px;
+      word-spacing: .3rem;
+      letter-spacing: 2px;
+    }
+
+  /* &&&&&&&&&&&&&&&&&&&&& */
+    .contact-address{
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+    }
+    .verti{
+      display: none;
+      visibility: hidden;
+    }
+    .hori{
+      display: flex;
+      visibility: visible;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-container {
+        width: 100%;
+    }
+    .gallery-item {
+        flex-basis: 49.80%;
+        margin-bottom: 3px;
+    }
+    .lightbox-content {
+        width: 80%;
+        height: 60%;
+        margin: 15% auto;
+    }
+}
+@media (max-width: 480px) {
+    .gallery-item {
+        flex-basis: 100%;
+        margin-bottom: 1px;
+    }
+    .lightbox-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}
+

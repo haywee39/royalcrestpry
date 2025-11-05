@@ -1,0 +1,334 @@
+html{
+  overflow-x: hidden;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: rgb(0, 100, 0);;
+}
+p, a, b{
+  font-size: 18px;
+  text-decoration: none;
+}
+
+ p, a{
+    font-weight: normal;
+    color: white;
+  }
+
+  /* ************************** */
+   /* Loader Container */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color:rgb(0, 100, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 99999;
+    }
+
+  /* ************************************* */
+
+/* animated section */
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state (visible) */
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+  /* MENU / CLOSE toggle */
+    .menu-toggle {
+      position: fixed;
+      top: 3.5rem;
+      left: 20px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;     
+      text-decoration: underline;
+      text-underline-offset: 15px;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+     .tour {
+      position: fixed;
+      top: 3.5rem;
+      right: 20px;
+      text-align: right;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;
+      text-decoration: underline;
+      text-underline-offset: 15px;
+      letter-spacing: 2px;
+      user-select: none;
+      /* padding-right: 10px; */
+    }
+    .logo {
+      position: absolute;
+      top: 20vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+    }
+    .logo{
+      width: 120px;
+      height: 120px;
+      border: white 1px solid;
+      background: white;
+    }
+ /* Fullscreen overlay menu */
+    .fullscreen-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(85, 4, 4);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 150px 30px;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+      z-index: 9999;
+    }
+    .fullscreen-menu.show {
+      transform: translateY(0);
+    }
+
+    /* Nav links */
+    .fullscreen-menu a {
+      position: relative;
+      display: inline-block;
+      color: white;
+      font-size: 1.3rem;
+      margin: 15px 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .fullscreen-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    
+    .fullscreen-menu a:hover::after {
+      width: 100%;
+    }
+
+    /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/& */
+
+
+    .anthem{
+    background-image: url(./anthemimg/Chior.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(0, 100, 0, 0.3);
+    display: flex;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    padding:5rem;
+    }
+
+   .overlay{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 100, 0, 0.4);
+    padding: 3rem;
+    z-index: 1;
+    }
+    .overlay h2{
+      color: white;
+    }
+    .logos{
+      width: 120px;
+      height: 120px;
+      border: white 1px solid;
+      background: white;
+    }
+    /* **************************************** */
+    /* ************************************* */
+
+/* CTA Footer */
+.cta-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 20px;
+    background-color:rgb(0, 100, 0);
+    color: white;
+}
+
+.cta-footer h3 {
+    color: var(--background-white);
+    margin-bottom: 1.5rem;
+}
+
+.cta-footer .cta-button {
+    background-color: white;
+    color: rgb(0, 100, 0);
+}
+.cta-button {
+    display: inline-block;
+    background:  rgb(0, 100, 0);
+    color: white;
+    letter-spacing: 2px;
+    padding: 1.2rem 5rem;
+    border-radius: 3px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.cta-button:hover { 
+    transform: translateY(-5px);
+    border: none;
+}
+.hori{
+  display: none;
+  visibility: hidden;
+}
+.contact-address{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+  height: 45vh;
+  padding: 0;
+  /* background-color: red; */
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    
+  max-width: 200px;
+  color: white; 
+  gap: 5px; 
+  /* background-color: blue;     */
+}
+.quick-link a{
+  text-decoration: none;
+  color: white;
+}
+
+.address {
+  align-items: center;
+  text-align: left;    
+  max-width: 300px;
+  color: white; 
+  /* background-color: blue;      */
+}
+.address p{
+  color: white;
+}
+.quick-link h4, .address h4, .map h4{
+  color: white;
+}
+
+ .map {
+   max-width: 300px; 
+}
+.more-text p{
+  color: white;
+}
+
+
+
+
+    /* ********************************* */
+    /* ************************************* */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+/* ****************************************************** */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo{
+    display: none;
+    visibility: hidden;
+  }
+  .anthem{
+    padding:5.2rem 10px;
+  }
+  .overlay{
+    padding: 10px;
+  }
+   /* ************************ */
+     /* &&&&&&&&&&&&&&&&&&&&& */
+    .contact-address{
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+    }
+    .verti{
+      display: none;
+      visibility: hidden;
+    }
+    .hori{
+      display: flex;
+      visibility: visible;
+    }
+   
+}

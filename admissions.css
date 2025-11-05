@@ -1,0 +1,287 @@
+html{
+  overflow-x: hidden;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: rgb(0, 100, 0);
+}
+p, a, b{
+  font-size: 20px;
+  text-decoration: none;
+}
+
+ p, a{
+  font-weight: normal;
+  }
+  
+  /* ************************************* */
+/* animated section */
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state (visible) */
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+.brief-intro{
+  width: 100vw;
+  padding: 4rem;
+  text-align: center;
+  color: rgb(0, 100, 0);
+  /* background-color: blue; */
+}
+
+  /* ****************************************** */
+.acad-cover{
+  display: flex;
+  width: 100vw;
+  height: auto;
+  justify-content: space-evenly;
+  gap: 50px;
+  padding: 20px;
+}
+.junior{
+  display: flex;
+  width: 100%;
+  height:100%;
+}
+.jtext{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  height: 100%;  
+  /* background-color: blue; */
+}
+.jtext p{
+  color: rgb(0, 100, 0);
+  text-align: center;
+}
+.jimg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.jimg img{
+  width: 100%;
+  height: 50%;
+}
+/* ************************** */
+.tour-section {
+  padding: 65px 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 100, 0, 0.6);
+  /* background-color: red; */
+}
+
+.tour-cover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 100%;
+  gap: 1.5rem;
+  /* background-color: blue; */
+
+}
+.tour-cover h2{
+  color: white;
+}
+.tour-cover h2{
+  word-spacing: .5rem;
+}
+.tour-cover h5{
+  color: white;
+  font-size: 20px;
+  word-spacing: .8rem;
+  letter-spacing: .3rem;
+}
+/* ************************************* */
+
+/* CTA Footer */
+.cta-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 20px;
+    background-color:rgb(0, 100, 0);
+    color: white;
+}
+
+.cta-footer h3 {
+    color: var(--background-white);
+    margin-bottom: 1.5rem;
+}
+
+.cta-footer .cta-button {
+    background-color: white;
+    color: rgb(0, 100, 0);
+}
+.cta-button {
+    display: inline-block;
+    background:  rgb(0, 100, 0);
+    color: white;
+    letter-spacing: 2px;
+    padding: 1.2rem 5rem;
+    border-radius: 3px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    border: none;
+}
+.hori{
+  display: none;
+  visibility: hidden;
+}
+.contact-address{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+  height: 45vh;
+  padding: 0;
+  /* background-color: red; */
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    
+  max-width: 200px;
+  color: white; 
+  gap: 5px; 
+  /* background-color: blue;     */
+}
+.quick-link a{
+  text-decoration: none;
+  color: white;
+}
+
+.address {
+  align-items: center;
+  text-align: left;    
+  max-width: 300px;
+  color: white; 
+}
+.address p{
+  color: white;
+}
+.quick-link h4, .address h4, .map h4{
+  color: white;
+}
+
+ .map {
+   max-width: 300px; 
+}
+.more-text p{
+  color: white;
+}
+
+
+
+/* ****************************************************** */    
+/* ****************************************************** */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo{  
+    display: none;
+    visibility: hidden;
+   }
+   .brief-intro{
+    width: 100%;
+    padding: 1rem;
+  }
+  /* ******************************* */
+      .acad-cover{
+    padding: 1rem;
+  }
+    .junior{
+      flex-direction: column;
+      height: auto;
+      padding: 0;
+    }
+   .jtext{
+      width: 100%;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 20px;
+    }
+    .jimg{
+      width: 100%;
+      height: 100%;
+      gap: 20px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .jimg img{
+      width: 100%;
+      height: 100%;
+      
+    }
+    /* &&&&&&&&&&&&&&&&&&&&&&&&&& */
+   /* ************************ */
+    .tour-section{
+      width: 100%;
+      height: 100%;
+      padding: 15px 5px;
+  
+    }
+    .tour-cover{
+      width: 90%;
+      height: auto;
+      gap: .5rem;
+    }
+    .tour-section h2{
+       text-align: center;
+       padding: 0 5px;
+    }
+    .tour-cover h5{
+      font-size: 20px;
+      word-spacing: .3rem;
+      letter-spacing: 2px;
+    }
+      /* &&&&&&&&&&&&&&&&&&&&& */
+    .contact-address{
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+    }
+    .verti{
+      display: none;
+      visibility: hidden;
+    }
+    .hori{
+      display: flex;
+      visibility: visible;
+    } 
+   
+}

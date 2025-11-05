@@ -1,0 +1,301 @@
+html{
+    overflow-x: hidden;
+  }
+  html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Merriweather', serif;
+      color: rgb(0, 100, 0);
+  }
+  p, a, b{
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+  
+   p, a{
+      font-weight: normal;
+    }
+/* ********************************* */
+  /* animated section */
+  .animated-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Final state (visible) */
+  .animated-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+.brief-intro{
+  width: 100vw;
+  padding: 4rem;
+  text-align: center;
+  color: rgb(0, 100, 0);
+}
+  /* ************************************************* */
+/* Student-pro Section */
+.student-pro {
+    padding: 4rem 2rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 20px;
+    height: auto;
+    gap: 10px;
+    justify-content: center;
+    background-color: rgb(0, 100, 0, 0.3);
+}
+.student-pro h5{
+  font-style: italic;
+  padding: 0 30px;
+}
+.student-item{
+    display: flex;
+    width: 85%;
+    height: 70vh;
+    margin: 3rem;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;  
+    /* background-color: blueviolet; */
+}
+
+
+/* ****************************************************    */
+
+  /* Square image on top */
+  .photo {
+    position: relative;
+    width: 50vw;
+    height: 80%;
+    z-index: 1;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+  }
+
+ 
+/* ****************************************************************** */
+.value{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    gap: 10px;
+}
+.value h3, h5, i, p{
+    color:  rgb(0, 100, 0) ;
+}
+/* .value p{
+  color: black;
+} */
+/* ********************************************* */
+
+.tour-section {
+  padding: 65px 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 100, 0, 0.6);
+  /* background-color: red; */
+}
+
+.tour-cover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 100%;
+  gap: 1.5rem;
+
+}
+
+.tour-cover h2{
+  word-spacing: .5rem;
+  color: white;
+}
+.tour-cover h5{
+  color: white;
+  font-size: 20px;
+  word-spacing: .8rem;
+  letter-spacing: .3rem;
+}
+/* ****************************************** */
+
+/* CTA Footer */
+.cta-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 20px;
+    background-color:rgb(0, 100, 0);
+    color: white;
+}
+
+.cta-footer h3 {
+    color: var(--background-white);
+    margin-bottom: 1.5rem;
+}
+
+.cta-footer .cta-button {
+    background-color: white;
+    color: rgb(0, 100, 0);
+}
+.cta-button {
+    display: inline-block;
+    background:  rgb(0, 100, 0);
+    color: white;
+    letter-spacing: 2px;
+    padding: 1.2rem 5rem;
+    border-radius: 3px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    border: none;
+}
+.hori{
+  display: none;
+  visibility: hidden;
+}
+.contact-address{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+  height: 45vh;
+  padding: 0;
+  /* background-color: red; */
+}
+.contact-address i{
+  color: white;
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    
+  max-width: 200px;
+  color: white; 
+  gap: 5px; 
+  /* background-color: blue;     */
+}
+.quick-link a{
+  text-decoration: none;
+  color: white;
+}
+
+.address {
+  align-items: center;
+  text-align: left;    
+  max-width: 300px;
+  color: white; 
+  /* background-color: blue;      */
+}
+.address p{
+  color: white;
+}
+.quick-link h4, .address h4, .map h4{
+  color: white;
+}
+
+ .map {
+   max-width: 300px; 
+}
+.more-text p{
+  color: white;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo{
+  display: none;
+  visibility: hidden;
+}
+ .student-pro {
+    padding: 2rem 0;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    }
+    .student-item{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    }
+    .photo{
+        width: 100vw;
+    }
+
+  .value{ 
+    align-items: center;
+    width: 100%;
+}
+.value h1, .value p{
+    color: rgb(0, 100, 0);
+    letter-spacing: 2px;
+}
+    /* ************************ */
+    .tour-section{
+      width: 100%;
+      height: 100%;
+      padding: 15px 5px;
+  
+    }
+    .tour-cover{
+      width: 90%;
+      height: auto;
+      gap: .5rem;
+    }
+    .tour-section h2{
+       text-align: center;
+       padding: 0 5px;
+    }
+    .tour-cover h5{
+      font-size: 20px;
+      word-spacing: .3rem;
+      letter-spacing: 2px;
+    }
+    /* &&&&&&&&&&&&&&&&&& */
+    .contact-address{
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+    }
+    .verti{
+      display: none;
+      visibility: hidden;
+    }
+    .hori{
+      display: flex;
+      visibility: visible;
+    }
+
+}
