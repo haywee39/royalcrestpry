@@ -50,8 +50,6 @@ p, a, b{
     /* Logo */
     #loader img {
       width: 230px;
-      /* margin-bottom: 20px; */
-      /* background-color: white; */
     }
 
     /* Percentage text */
@@ -313,9 +311,9 @@ p, a, b{
   /* filter: brightness(0.6); */
 }
 
-.box1::before { background-image: url("./tinyimg/grad2.jpg"); }
-.box2::before { background-image: url("./tinyimg/music.jpg"); }
-.box3::before { background-image: url("./tinyimg/dancechoreo_1.jpg"); }
+.box1::before { background-image: url("./HOMEIMG/academics.jpg"); }
+.box2::before { background-image: url("./HOMEIMG/arts.jpg"); }
+.box3::before { background-image: url("./HOMEIMG/athletics.jpg"); }
 
 .overlay {
   width: 100%;

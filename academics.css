@@ -49,9 +49,13 @@ p, a, b{
   gap: 20px;
 }
 .jtext{
+  display: flex;
+  flex-direction: column;
   padding:0 20px;
   width: 50%;
   height: 100%;
+  align-items: center;
+  justify-content: center;
   color: rgb(0, 100, 0);
   /* background-color: blue; */
 }
