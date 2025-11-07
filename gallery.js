@@ -60,16 +60,16 @@ lightBoxContainer.addEventListener("click", closeLightBox);
 
 
 // video jas 
-function currentImage(e) {
-    // If it's a video item → redirect
-    if (this.classList.contains("video-item")) {
-        let videoUrl = this.getAttribute("data-url");
-        window.open(videoUrl, "_blank"); // open in new tab
-        return;
-    }
+// function currentImage(e) {
+//     // If it's a video item → redirect
+//     if (this.classList.contains("video-item")) {
+//         let videoUrl = this.getAttribute("data-url");
+//         window.open(videoUrl, "_blank"); // open in new tab
+//         return;
+//     }
 
-    // Else → image lightbox
-    lightBoxContainer.style.display = "block";
-    let imageIndex = parseInt(this.getAttribute("data-index"));
-    showLightBox(index = imageIndex);
-}
+//     // Else → image lightbox
+//     lightBoxContainer.style.display = "block";
+//     let imageIndex = parseInt(this.getAttribute("data-index"));
+//     showLightBox(index = imageIndex);
+// }

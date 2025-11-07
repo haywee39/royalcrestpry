@@ -107,7 +107,7 @@ p, a, b{
 
 /* GALLERY VIDEO ITEM  */
 /* Position video play button in center */
-.video-item {
+/* .video-item {
   position: relative;
 }
 
@@ -122,8 +122,8 @@ p, a, b{
   background: rgb(0, 100, 0, 0.6);
   border-radius: 50%;
   padding: 0.5rem 0.8rem;
-  pointer-events: none; /* allows click to pass through to parent */
-}
+  pointer-events: none; /* allows click to pass through to parent
+} */
 /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/& */
 .tour-section {
   padding: 65px 20px;
