@@ -310,9 +310,9 @@ p, a, b{
   /* filter: brightness(0.6); */
 }
 
-.box1::before { background-image: url("./HOMEIMG/academics.jpg"); }
-.box2::before { background-image: url("./HOMEIMG/arts.jpg"); }
-.box3::before { background-image: url("./HOMEIMG/athletics.jpg"); }
+.box1::before { background-image: url("./HOMIMG/academics.jpg"); }
+.box2::before { background-image: url("./HOMIMG/arts.jpg"); }
+.box3::before { background-image: url("./HOMIMG/athletics.jpg"); }
 
 .overlay {
   width: 100%;
@@ -513,37 +513,6 @@ p, a, b{
   letter-spacing: .3rem;
 }
 /* ****************************************** */
-/* ************************************ */
- .partners-section {
-      background: transparent;
-      width: 100vw;
-      padding: 40px 0;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .partners-slider {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      animation: scroll 6s linear infinite;
-      width: max-content;
-    }
-
-    .partners-slider img {
-      height: 150px;
-      object-fit: contain;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-/* ************************************* */
 
 /* CTA Footer */
 .cta-footer {
