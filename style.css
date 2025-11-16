@@ -229,6 +229,7 @@ p, a, b{
     margin: 3rem;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
 }
 .student-item img{
     width: 40%;
@@ -236,14 +237,14 @@ p, a, b{
     padding: 0;
 }
 .value{
-      margin-top: 1rem;
-      gap: 10px;
+    /* gap: 10px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 30%;
     height: 80%;
+    /* background-color: red; */
 }
 .value i{
     color: rgb(0, 100, 0, 0.7);
