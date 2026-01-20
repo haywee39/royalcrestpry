@@ -51,44 +51,49 @@
     <div class="tour-form-container">
         <div class="close-tour-form" id="closeTourForm">×</div>
         <h2>Schedule a Tour</h2>
-        <form action="" method="POST">
+        <form action="https://formsubmit.co/4a7c4afeb6a48db200acf28838bdb2ed" method="POST">
+            
+            <input type="hidden" name="_subject" value="New Tour Schedule Request">
+
             <div class="form-group">
                 <label>Person Inquiring Name *</label>
-                <input type="text" placeholder="Enter your Full Name" required>
+                <input type="text" placeholder="Enter your Full Name" name="parent_name" required>
             </div>
+
             <div class="form-group">
                 <label>Relationship to Student *</label>
-                <input type="text" placeholder="Ex: Mother" required>
+                <input type="text" placeholder="Ex: Mother" name="relationship" required>
             </div>
+
             <div class="form-group">
                 <label>Phone number *</label>
-                <input type="tel" placeholder="Enter your phone number" required>
+                <input type="tel" placeholder="Enter your phone number" name="phone" required>
             </div>
+
             <div class="form-group">
                 <label>Email *</label>
-                <input type="email" placeholder="Enter your email" required>
+                <input type="email" placeholder="Enter your email" name="email" required>
             </div>
+
             <div class="form-group">
                 <label>Applicant Info (First Name, Last Name, Gender, DOB) *</label>
-                <textarea placeholder="Type here..." required></textarea>
+                <textarea placeholder="Type here..." name="applicant_details" required></textarea>
             </div>
+
             <div class="form-group">
                 <label>Grade entering *</label>
-                <input type="text" placeholder="Type here..." required>
+                <input type="text" placeholder="Type here..." name="grade_level" required>
             </div>
 
              <div class="form-group">
                 <label>Tell us when you will like to visit Royal Crest College *</label>
-                <textarea placeholder="Type here..." required></textarea>
+                <textarea placeholder="Type here..." name="requested_visit_date" required></textarea>
             </div>
 
-                <div class="form-group">
-                    <button type="submit" class="submit-button">Submit</button>
-                </div>
-
-
+            <div class="form-group">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
         </form>
-        
     </div>
 </div>
 
